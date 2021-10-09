@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: admadene <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/06/09 17:22:03 by admadene          #+#    #+#              #
-#    Updated: 2021/06/28 17:08:39 by admadene         ###   ########.fr        #
+#    Created: 2021/10/09 15:17:06 by admadene          #+#    #+#              #
+#    Updated: 2021/10/09 15:17:52 by admadene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= PhoneBook
 
-SRCS	= main.cpp Contact.cpp
+SRCS	= main.cpp Phonebook.cpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
