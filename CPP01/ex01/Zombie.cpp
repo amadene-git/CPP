@@ -6,7 +6,7 @@
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/30 17:42:12 by admadene          #+#    #+#             */
-/*   Updated: 2021/06/30 18:08:16 by admadene         ###   ########.fr       */
+/*   Updated: 2021/10/09 17:20:24 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 Zombie::Zombie(void)
 {
+	std::cout << "Zombie constructor called\n";
 }
 
 Zombie::~Zombie(void)
 {
-	std::cout << this->_name << " is dead :(" << std::endl;
+	std::cout << this->_name << " is died :( ->" << this << std::endl;
 }
 
-void	Zombie::annonce(void)
+void	Zombie::announce(void)
 {
 	std::cout << this->_name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }

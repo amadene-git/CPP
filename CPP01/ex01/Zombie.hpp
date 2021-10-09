@@ -11,7 +11,7 @@ class	Zombie
 		Zombie(void);
 		~Zombie(void);
 		
-		void		annonce(void);
+		void		announce(void);
 		void		setter(std::string name);
 		std::string	getter(void);
 	
