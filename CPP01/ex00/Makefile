@@ -6,11 +6,11 @@
 #    By: admadene <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/09 17:22:03 by admadene          #+#    #+#              #
-#    Updated: 2021/06/30 18:13:07 by admadene         ###   ########.fr        #
+#    Updated: 2021/10/09 16:37:03 by admadene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Zombie
+NAME	= BraaaaaiiiinnnzzZ
 
 SRCS	= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
