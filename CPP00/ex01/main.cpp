@@ -6,7 +6,7 @@
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:00:21 by admadene          #+#    #+#             */
-/*   Updated: 2021/10/09 15:24:49 by admadene         ###   ########.fr       */
+/*   Updated: 2021/10/09 16:02:10 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void)
 		{
 			lol.list[i % 8].add_contact(i % 8);
 			i++;
-			
+		}			
 		else if (!line.compare("SEARCH"))
 			lol.search_contact((i > 8) ? 8 : i);
 		else if (line.compare("EXIT"))
