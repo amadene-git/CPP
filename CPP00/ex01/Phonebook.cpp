@@ -6,7 +6,7 @@
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:13:09 by admadene          #+#    #+#             */
-/*   Updated: 2021/10/09 15:24:41 by admadene         ###   ########.fr       */
+/*   Updated: 2021/10/15 15:05:21 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,119 +22,88 @@ Contact::~Contact(void)
 
 void	Contact::print_contact(void)
 {
-	std::cout << "First name: " +  this->first_name << std::endl;
-	std::cout << "Last name: " +  this->last_name << std::endl;
-	std::cout << "Nickname: " +  this->nickname << std::endl;
-	std::cout << "Login: " +  this->login << std::endl;
-	std::cout << "adress: " +  this->address << std::endl;
-	std::cout << "mail: " +  this->mail << std::endl;
-	std::cout << "Phone number: " +  this->phone << std::endl;
-	std::cout << "Birthday: " +  this->birthday << std::endl;
-	std::cout << "Favorite meal: " +  this->meal << std::endl;
-	std::cout << "Underwear color: " +  this->underwear << std::endl;
-	std::cout << "Darkest secret: " +  this->secret << std::endl;
+	std::cout << "First name: " +  this->_first_name << std::endl;
+	std::cout << "Last name: " +  this->_last_name << std::endl;
+	std::cout << "Nickname: " +  this->_nickname << std::endl;
+	std::cout << "Phone number: " +  this->_phone << std::endl;
+	std::cout << "Darkest secret: " +  this->_secret << std::endl;
 }
 
-void	Contact::add_contact(int index)
+int		Contact::add_contact(int index)
 {
 	this->delete_contact();
-	while (this->first_name.empty())
+	while (this->_first_name.empty())
 	{
 		std::cout << "First name:";
-		getline(std::cin, this->first_name);
+		if(getline(std::cin, this->_first_name).eof())
+			return (0);
 	}
-	while (this->last_name.empty())
+	while (this->_last_name.empty())
 	{
 		std::cout << "Last name:";
-		getline(std::cin, this->last_name);
+		if(getline(std::cin, this->_last_name))
+			return (0);
 	}
-	while (this->nickname.empty())
+	while (this->_nickname.empty())
 	{
 		std::cout << "Nickname:";
-		getline(std::cin, this->nickname);
+		if(getline(std::cin, this->_nickname))
+			return (0);
 	}
-	while (this->login.empty())
-	{
-		std::cout << "Login:";
-		getline(std::cin, this->login);
-	}
-	while (this->address.empty())
-	{
-		std::cout << "adress:";
-		getline(std::cin, this->address);
-	}
-	while (this->mail.empty())
-	{
-		std::cout << "mail:";
-		getline(std::cin, this->mail);
-	}
-	while (this->phone.empty())
+	while (this->_phone.empty())
 	{
 		std::cout << "Phone number:";
-		getline(std::cin, this->phone);
+		if(getline(std::cin, this->_phone))
+			return (0);
 	}
-	while (this->birthday.empty())
-	{
-		std::cout << "Birthday:";
-		getline(std::cin, this->birthday);
-	}
-	while (this->meal.empty())
-	{
-		std::cout << "Favorite meal:";
-		getline(std::cin, this->meal);
-	}
-	while (this->underwear.empty())
-	{
-		std::cout << "Underwear color:";
-		getline(std::cin, this->underwear);
-	}
-	while (this->secret.empty())
+	while (this->_secret.empty())
 	{
 		std::cout << "Darkest secret:";
-		getline(std::cin, this->secret);
+		if(getline(std::cin, this->_secret))
+			return (0);
 	}
-	this->index = index;
+	this->_index = index;
+	return (1);
 }
 
 void	Contact::delete_contact(void)
 {
-	this->first_name.clear();
-	this->last_name.clear();
-	this->nickname.clear();
-	this->login.clear();
-	this->address.clear();
-	this->mail.clear();
-	this->phone.clear();
-	this->birthday.clear();
-	this->meal.clear();
-	this->underwear.clear();
-	this->secret.clear();
+	this->_first_name.clear();
+	this->_last_name.clear();
+	this->_nickname.clear();
+	this->_phone.clear();
+	this->_secret.clear();
 }
 
 void	Contact::print_tronc(void)
 {
-	std::cout << "|         " << this->index + 1 << "|";
+	std::cout << "|         " << this->_index + 1 << "|";
 
-	for (int i = 10; i > int(this->first_name.length()); i--)
+	for (int i = 10; i > int(this->_first_name.length()); i--)
 		std::cout << " ";
-	if (this->first_name.length() > 10)
-		this->first_name.replace(9, 10, ".");
-	std::cout << this->first_name.substr(0, 10) + "|";
+	if (this->_first_name.length() > 10)
+		this->_first_name.replace(9, 10, ".");
+	std::cout << this->_first_name.substr(0, 10) + "|";
 
 
-	for (int i = 10; i > int(this->last_name.length()); i--)
+	for (int i = 10; i > int(this->_last_name.length()); i--)
 		std::cout << " ";
-	if (this->last_name.length() > 10)
-		this->last_name.replace(9, 10, ".");
-	std::cout << this->last_name.substr(0, 10) + "|";
+	if (this->_last_name.length() > 10)
+		this->_last_name.replace(9, 10, ".");
+	std::cout << this->_last_name.substr(0, 10) + "|";
 
 
-	for (int i = 10; i > int(this->nickname.length()); i--)
+	for (int i = 10; i > int(this->_nickname.length()); i--)
 		std::cout << " ";
-	if (this->nickname.length() > 10)
-		this->nickname.replace(9, 10, ".");
-	std::cout << this->nickname.substr(0, 10) + "|" << std::endl;
+	if (this->_nickname.length() > 10)
+		this->_nickname.replace(9, 10, ".");
+	std::cout << this->_nickname.substr(0, 10) + "|" << std::endl;
 
+}
+
+int		Contact::is_empty(void)
+{
+	return (this->_first_name.empty());
 }
 
 Phonebook::Phonebook(void)
@@ -143,6 +112,11 @@ Phonebook::Phonebook(void)
 
 Phonebook::~Phonebook(void)
 {
+}
+
+Contact	*Phonebook::getter(void)
+{
+	return (this->_list);
 }
 
 void	Phonebook::search_contact(int i)
@@ -157,7 +131,7 @@ void	Phonebook::search_contact(int i)
 		std::cout << "|     index|first name| last name|  nickname|" << std::endl;
 		while (n < i)
 		{
-			this->list[n].print_tronc();	
+			this->_list[n].print_tronc();	
 			n++;
 		}
 		while (1)
@@ -165,9 +139,9 @@ void	Phonebook::search_contact(int i)
 			std::cout << "index ?: ";
 			getline(std::cin, line);
 			n = atoi(line.c_str());
-			if (n >= 1 && n <= 8 && !this->list[n - 1].first_name.empty())
+			if (n >= 1 && n <= 8 && !this->_list[n - 1].is_empty())
 			{
-				this->list[n - 1].print_contact();
+				this->_list[n - 1].print_contact();
 				return ;
 			}
 			std::cout << "nope !\n";
