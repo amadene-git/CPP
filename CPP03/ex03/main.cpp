@@ -5,25 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 17:44:14 by admadene          #+#    #+#             */
-/*   Updated: 2021/10/18 12:43:17 by admadene         ###   ########.fr       */
+/*   Created: 2021/10/18 13:17:57 by admadene          #+#    #+#             */
+/*   Updated: 2021/10/18 15:54:46 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-	ClapTrap wesh("wesh");
-	wesh.attack("yo");
-	wesh.takeDamage(2);
-	wesh.beRepaired(2);
-	wesh.takeDamage(13);
-	wesh.takeDamage(45);
-	
-	ClapTrap yo(wesh);
-	yo.beRepaired(10);
-	wesh.takeDamage(4);
-	yo.takeDamage(6);
+	DiamondTrap Goku("Son Goku");
+
 	return (0);
+
+
+
 }

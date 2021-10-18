@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 17:44:14 by admadene          #+#    #+#             */
-/*   Updated: 2021/10/18 12:43:17 by admadene         ###   ########.fr       */
+/*   Created: 2021/10/17 17:40:53 by admadene          #+#    #+#             */
+/*   Updated: 2021/10/18 14:23:30 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 
-int main()
+# include "ScravTrap.hpp"
+# include "FragTrap.hpp"
+
+# include <iostream>
+# include <string>
+
+class	DiamondTrap : public ScravTrap, public FragTrap
 {
-	ClapTrap wesh("wesh");
-	wesh.attack("yo");
-	wesh.takeDamage(2);
-	wesh.beRepaired(2);
-	wesh.takeDamage(13);
-	wesh.takeDamage(45);
-	
-	ClapTrap yo(wesh);
-	yo.beRepaired(10);
-	wesh.takeDamage(4);
-	yo.takeDamage(6);
-	return (0);
-}
+	protected:
+		DiamondTrap(void);
+
+	public:
+		DiamondTrap(std::string const name);
+		DiamondTrap(DiamondTrap const & src);
+		DiamondTrap	&operator=(DiamondTrap const &rhs);
+		~DiamondTrap(void);
+};
+
+#endif

@@ -40,7 +40,7 @@ Points			&Points::operator-(unsigned int rhs)
 //CLAPTRAP CLASS
 ClapTrap::ClapTrap(void)
 {
-	std::cout << this << "*****ClapTrap***** Default constructor called" << std::endl;
+	std::cout << this << "*****ClapTrap***** Default constructor called for" << this->_name<< std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & src)

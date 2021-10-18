@@ -6,13 +6,13 @@
 #    By: admadene <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/09 15:17:06 by admadene          #+#    #+#              #
-#    Updated: 2021/10/18 12:37:59 by admadene         ###   ########.fr        #
+#    Updated: 2021/10/18 13:28:47 by admadene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ClapTraped
+NAME	= FragTraped
 
-SRCS	= ClapTrap.cpp  main.cpp
+SRCS	= ClapTrap.cpp ScravTrap.cpp FragTrap.cpp main.cpp
 
 OBJS	= ${SRCS:.cpp=.o}
 

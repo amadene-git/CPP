@@ -5,25 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 17:44:14 by admadene          #+#    #+#             */
-/*   Updated: 2021/10/18 12:43:17 by admadene         ###   ########.fr       */
+/*   Created: 2021/10/18 13:17:57 by admadene          #+#    #+#             */
+/*   Updated: 2021/10/18 14:26:44 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScravTrap.hpp"
 
 int main()
 {
-	ClapTrap wesh("wesh");
-	wesh.attack("yo");
-	wesh.takeDamage(2);
-	wesh.beRepaired(2);
-	wesh.takeDamage(13);
-	wesh.takeDamage(45);
+	ScravTrap	JeanMichel("Jean Michel");
+	JeanMichel.attack("Jean Francois");
+	JeanMichel.takeDamage(10);
+	JeanMichel.beRepaired(3);
+
+	std::cout << std::endl;
 	
-	ClapTrap yo(wesh);
-	yo.beRepaired(10);
-	wesh.takeDamage(4);
-	yo.takeDamage(6);
+	ScravTrap Sasuke("Sasuke");
+	Sasuke.guardGate();
+	Sasuke = JeanMichel;
+
+	std::cout << std::endl;
+
+	ClapTrap	Naruto("Naruto");
+	Naruto.attack("Jean Francois");
+	Naruto.takeDamage(10);
+	Naruto.beRepaired(3);
+
+	std::cout << std::endl;
+
+	
+//	Naruto.guardGate();
+//	Sasuke = Naruto;
+//	std::cout << JeanMichel._name << std::endl;
+
+
 	return (0);
+
+
+
 }

@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 17:44:14 by admadene          #+#    #+#             */
-/*   Updated: 2021/10/18 12:43:17 by admadene         ###   ########.fr       */
+/*   Created: 2021/10/17 17:40:53 by admadene          #+#    #+#             */
+/*   Updated: 2021/10/18 14:23:30 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main()
+# include "ClapTrap.hpp"
+
+# include <iostream>
+# include <string>
+
+class	FragTrap : virtual public ClapTrap
 {
-	ClapTrap wesh("wesh");
-	wesh.attack("yo");
-	wesh.takeDamage(2);
-	wesh.beRepaired(2);
-	wesh.takeDamage(13);
-	wesh.takeDamage(45);
-	
-	ClapTrap yo(wesh);
-	yo.beRepaired(10);
-	wesh.takeDamage(4);
-	yo.takeDamage(6);
-	return (0);
-}
+	protected:
+		FragTrap(void);
+
+	public:
+		FragTrap(std::string const name);
+		FragTrap(FragTrap const & src);
+		FragTrap	&operator=(FragTrap const &rhs);
+		~FragTrap(void);
+
+		void	highFivesGuys(void);
+};
+
+#endif
