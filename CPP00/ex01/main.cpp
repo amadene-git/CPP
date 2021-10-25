@@ -6,23 +6,11 @@
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:00:21 by admadene          #+#    #+#             */
-/*   Updated: 2021/10/15 14:09:39 by admadene         ###   ########.fr       */
+/*   Updated: 2021/10/25 21:15:57 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
-
-std::string	&ft_getline(std::string &line)
-{
-	char c;
-	
-
-	std::ifstream ifs;
-
-	ifs.read(&c, 1);
-
-	return (line);
-}
 
 int main(void)
 {
@@ -30,7 +18,6 @@ int main(void)
 	Phonebook 	lol;
 	Contact		*list = lol.getter();
 	int i = 0;
-//	int ret;
 
 	while (line.compare("EXIT"))
 	{
@@ -44,10 +31,12 @@ int main(void)
 			i++;
 		}			
 		else if (!line.compare("SEARCH"))
-			lol.search_contact((i > 8) ? 8 : i);
+		{
+			if (!lol.search_contact((i > 8) ? 8 : i))
+				return (0);
+		}
 		else if (line.compare("EXIT"))
 			std::cout << "nope !" << std::endl;
 	}
-
 	return (0);
 }

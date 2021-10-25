@@ -6,7 +6,7 @@
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:13:09 by admadene          #+#    #+#             */
-/*   Updated: 2021/10/15 15:05:21 by admadene         ###   ########.fr       */
+/*   Updated: 2021/10/25 21:14:26 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,25 @@ int		Contact::add_contact(int index)
 	while (this->_last_name.empty())
 	{
 		std::cout << "Last name:";
-		if(getline(std::cin, this->_last_name))
+		if(getline(std::cin, this->_last_name).eof())
 			return (0);
 	}
 	while (this->_nickname.empty())
 	{
 		std::cout << "Nickname:";
-		if(getline(std::cin, this->_nickname))
+		if(getline(std::cin, this->_nickname).eof())
 			return (0);
 	}
 	while (this->_phone.empty())
 	{
 		std::cout << "Phone number:";
-		if(getline(std::cin, this->_phone))
+		if(getline(std::cin, this->_phone).eof())
 			return (0);
 	}
 	while (this->_secret.empty())
 	{
 		std::cout << "Darkest secret:";
-		if(getline(std::cin, this->_secret))
+		if(getline(std::cin, this->_secret).eof())
 			return (0);
 	}
 	this->_index = index;
@@ -79,25 +79,26 @@ void	Contact::print_tronc(void)
 {
 	std::cout << "|         " << this->_index + 1 << "|";
 
-	for (int i = 10; i > int(this->_first_name.length()); i--)
+	std::string tmp = this->_first_name;
+	for (int i = 10; i > int(tmp.length()); i--)
 		std::cout << " ";
-	if (this->_first_name.length() > 10)
-		this->_first_name.replace(9, 10, ".");
-	std::cout << this->_first_name.substr(0, 10) + "|";
+	if (tmp.length() > 10)
+		tmp.replace(9, 10, ".");
+	std::cout << tmp.substr(0, 10) + "|";
 
-
-	for (int i = 10; i > int(this->_last_name.length()); i--)
+	tmp = this->_last_name;
+	for (int i = 10; i > int(tmp.length()); i--)
 		std::cout << " ";
-	if (this->_last_name.length() > 10)
-		this->_last_name.replace(9, 10, ".");
-	std::cout << this->_last_name.substr(0, 10) + "|";
+	if (tmp.length() > 10)
+		tmp.replace(9, 10, ".");
+	std::cout << tmp.substr(0, 10) + "|";
 
-
-	for (int i = 10; i > int(this->_nickname.length()); i--)
+	tmp = this->_nickname;
+	for (int i = 10; i > int(tmp.length()); i--)
 		std::cout << " ";
-	if (this->_nickname.length() > 10)
-		this->_nickname.replace(9, 10, ".");
-	std::cout << this->_nickname.substr(0, 10) + "|" << std::endl;
+	if (tmp.length() > 10)
+		tmp.replace(9, 10, ".");
+	std::cout << tmp.substr(0, 10) + "|" << std::endl;
 
 }
 
@@ -119,7 +120,7 @@ Contact	*Phonebook::getter(void)
 	return (this->_list);
 }
 
-void	Phonebook::search_contact(int i)
+int		Phonebook::search_contact(int i)
 {
 	int 		n = 0;
 	std::string	line;
@@ -137,14 +138,16 @@ void	Phonebook::search_contact(int i)
 		while (1)
 		{
 			std::cout << "index ?: ";
-			getline(std::cin, line);
+			if(getline(std::cin, line).eof())
+				return (0);
 			n = atoi(line.c_str());
 			if (n >= 1 && n <= 8 && !this->_list[n - 1].is_empty())
 			{
 				this->_list[n - 1].print_contact();
-				return ;
+				return (1);
 			}
 			std::cout << "nope !\n";
 		}
 	}
+	return (1);
 }

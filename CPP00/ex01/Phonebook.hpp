@@ -48,7 +48,7 @@ class	Phonebook
 		Phonebook(void);
 		~Phonebook(void);
 		
-		void	search_contact(int i);
+		int		search_contact(int i);
 		Contact	*getter(void);
 
 
