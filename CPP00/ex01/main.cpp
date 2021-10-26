@@ -15,8 +15,8 @@
 int main(void)
 {
 	std::string line;
-	Phonebook 	lol;
-	Contact		*list = lol.getter();
+	Phonebook 	book;
+	//Contact		*list = book.getter();
 	int i = 0;
 
 	while (line.compare("EXIT"))
@@ -26,13 +26,13 @@ int main(void)
 			return (0);
 		if (!line.compare("ADD"))
 		{
-			if(!list[i % 8].add_contact(i % 8))
+			if(!book.add_contact(i % 8))
 				return (0);
 			i++;
 		}			
 		else if (!line.compare("SEARCH"))
 		{
-			if (!lol.search_contact((i > 8) ? 8 : i))
+			if (!book.search_contact((i > 8) ? 8 : i))
 				return (0);
 		}
 		else if (line.compare("EXIT"))

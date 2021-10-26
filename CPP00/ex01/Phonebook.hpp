@@ -6,7 +6,7 @@
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:02:30 by admadene          #+#    #+#             */
-/*   Updated: 2021/10/15 14:10:02 by admadene         ###   ########.fr       */
+/*   Updated: 2021/10/26 19:58:12 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 # define PHONEBOOK_HPP
 # include <string>
 # include <iostream>
-# include <istream>
-# include <fstream>
-# include <array>
+# include <cstdlib>
 
 class	Contact
 {
@@ -25,10 +23,21 @@ class	Contact
 		~Contact(void);
 		
 		void	print_contact(void);
-		int		add_contact(int index);
 		void	delete_contact(void);
 		void	print_tronc(void);
 		int		is_empty(void);
+		
+		std::string	get_first_name(void);
+		std::string	get_last_name(void);
+		std::string get_nickname(void);
+		std::string	get_phone(void);
+		std::string	get_secret(void);
+		void		set_first_name(std::string str);
+		void		set_last_name(std::string str);
+		void		set_nickname(std::string str);
+		void		set_phone(std::string str);
+		void		set_secret(std::string str);
+		void		set_index(int index);
 
 	private:
 		int			_index;
@@ -49,6 +58,7 @@ class	Phonebook
 		~Phonebook(void);
 		
 		int		search_contact(int i);
+		int		add_contact(int index);
 		Contact	*getter(void);
 
 
