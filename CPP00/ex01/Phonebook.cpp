@@ -76,7 +76,6 @@ void	Contact::print_contact(void)
 	std::cout << "Darkest secret: " +  this->_secret << std::endl;
 }
 
-
 void	Contact::delete_contact(void)
 {
 	this->_first_name.clear();

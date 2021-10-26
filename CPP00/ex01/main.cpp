@@ -16,7 +16,6 @@ int main(void)
 {
 	std::string line;
 	Phonebook 	book;
-	//Contact		*list = book.getter();
 	int i = 0;
 
 	while (line.compare("EXIT"))
