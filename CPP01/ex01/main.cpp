@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombe.hpp"
+#include "Zombie.hpp"
 #include <ostream>
 
 int main()
@@ -44,6 +44,8 @@ int main()
 	std::cout << "delete [] horde->\n";
 	delete [] horde;
 	
+	
+	
 	N = 0;
 	name = "Eugene";
 	i = 0;
@@ -56,6 +58,8 @@ int main()
 		i++;
 	}
 	std::cout << name + " ->" << horde << std::endl;
+	
+	
 	
 	N = -1;
 	name = "JuL";

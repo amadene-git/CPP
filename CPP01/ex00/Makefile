@@ -16,17 +16,19 @@ SRCS	= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
+HEADER	= Zombie.hpp
+
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 CC		= clang++
 
 
 .cpp.o	:
-			${CC}  ${FLAGS} -c $< -o ${<:.cpp=.o}
+			${CC}  ${FLAGS} -I . -c $< -o ${<:.cpp=.o}
 
 all:	${NAME}
 
-${NAME}:	${OBJS}
+${NAME}:	${OBJS} ${HEADER}
 			${CC} ${FLAGS} -o ${NAME} ${OBJS}
 
 clean :

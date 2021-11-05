@@ -14,6 +14,8 @@ NAME	= ZombieHorde
 
 SRCS	= main.cpp Zombie.cpp ZombieHorde.cpp 
 
+HEADER	= Zombie.hpp
+
 OBJS	= ${SRCS:.cpp=.o}
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -22,11 +24,11 @@ CC		= clang++
 
 
 .cpp.o	:
-			${CC}  ${FLAGS} -c $< -o ${<:.cpp=.o}
+			${CC}  ${FLAGS} -I . -c $< -o ${<:.cpp=.o}
 
 all:	${NAME}
 
-${NAME}:	${OBJS}
+${NAME}:	${OBJS} ${HEADER}
 			${CC} ${FLAGS} -o ${NAME} ${OBJS}
 
 clean :

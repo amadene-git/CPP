@@ -16,12 +16,9 @@
 
 int main()
 {
-	std::string str = "Bob";
-	Zombie	*bob = newZombie(str);
+	Zombie	*bob = newZombie("Bob");
 
-	str.assign("Luc");
 
-	std::cout << "str " + str << std::endl;
 	std::cout << "Bob getter->" + bob->getter() << std::endl;
 	std::cout << "Bob announce->";
 	bob->announce();
