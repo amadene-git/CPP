@@ -12,19 +12,20 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon& weaponref)
+HumanA::HumanA(std::string name, Weapon& weaponref) : _weapon(weaponref)
 {
-	this->_weapon = &weaponref;
 	this->_name = name;
+	std::cout << "HumanA constructor called for " << this->_name << " with his " << this->_weapon.getType() << std::endl;
 }
 
 HumanA::~HumanA(void)
 {
+	std::cout << "HumanA destructor called for " << this->_name << std::endl;
 }
 
 void	HumanA::attack(void)
 {
-	std::cout << this->_name << " attacks with his " << this->_weapon->getType() << std::endl;
+	std::cout << this->_name << " attacks with his " << this->_weapon.getType() << std::endl;
 }
 
 

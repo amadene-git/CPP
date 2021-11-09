@@ -20,7 +20,6 @@ class	Weapon
 {
 
 	public:
-		Weapon(void);
 		Weapon(std::string weapon_name);
 		~Weapon(void);
 

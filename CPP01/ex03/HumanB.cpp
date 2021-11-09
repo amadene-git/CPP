@@ -15,10 +15,12 @@
 HumanB::HumanB(std::string name)
 {
 	this->_name = name;
+	std::cout << "HumanB constructor called for " << this->_name << std::endl;
 }
 
 HumanB::~HumanB(void)
 {
+	std::cout << "HumanB destructor called for " << this->_name << std::endl;
 }
 
 void	HumanB::setWeapon(Weapon& weaponref)

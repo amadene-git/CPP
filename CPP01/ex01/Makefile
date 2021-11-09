@@ -26,14 +26,17 @@ CC		= clang++
 .cpp.o	:
 			${CC}  ${FLAGS} -I . -c $< -o ${<:.cpp=.o}
 
-all:	${NAME}
 
-${NAME}:	${OBJS} ${HEADER}
-			${CC} ${FLAGS} -o ${NAME} ${OBJS}
+all		:	${NAME}
 
-clean :
+${OBJS}	:	${HEADER}	
+
+${NAME}	:	${OBJS} ${HEADER}
+				${CC} ${FLAGS} -o ${NAME} ${OBJS}
+
+clean 	:
 			rm -rf ${OBJS}
-fclean :	clean
+fclean 	:	clean
 			rm -rf ${NAME}
 re		: fclean
 			make all

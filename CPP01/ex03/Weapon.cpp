@@ -12,14 +12,15 @@
 
 #include "Weapon.hpp"
 
-
 Weapon::Weapon(std::string type_name)
 {
 	this->setType(type_name);
+	std::cout << "Weapon constructor called for " << this->getType() << std::endl;
 }
 
 Weapon::~Weapon(void)
 {
+	std::cout << "Weapon destructor called for " << this->getType() << std::endl;
 }
 
 std::string const	&Weapon::getType(void)

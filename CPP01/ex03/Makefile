@@ -16,18 +16,22 @@ SRCS	= main.cpp  Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
+HEADER	= HumanA.hpp HumanB.hpp Weapon.hpp
+
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 CC		= clang++
 
 
-.cpp.o	:
-			${CC}  ${FLAGS} -c $< -o ${<:.cpp=.o}
+.cpp.o	:	
+			${CC} ${FLAGS} -c $< -o ${<:.cpp=.o}
 
 all:	${NAME}
 
 ${NAME}:	${OBJS}
-			${CC} ${FLAGS} -o ${NAME} ${OBJS}
+			${CC}  ${FLAGS} -o ${NAME} ${OBJS}
+
+${OBJS}:	${HEADER}
 
 clean :
 			rm -rf ${OBJS}
@@ -37,3 +41,4 @@ re		: fclean
 			make all
 
 .PHONY: all re clean fclean
+

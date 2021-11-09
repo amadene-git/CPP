@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <string>
-#include <iostream>
 
 Zombie*	zombieHorde( int N, std::string name )
 {

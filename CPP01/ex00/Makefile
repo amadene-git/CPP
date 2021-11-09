@@ -28,7 +28,9 @@ CC		= clang++
 
 all:	${NAME}
 
-${NAME}:	${OBJS} ${HEADER}
+${OBJS}:	${HEADER}
+
+${NAME}:	${OBJS}
 			${CC} ${FLAGS} -o ${NAME} ${OBJS}
 
 clean :
