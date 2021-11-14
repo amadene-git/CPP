@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/01 17:26:04 by admadene          #+#    #+#             */
-/*   Updated: 2021/07/01 17:37:06 by admadene         ###   ########.fr       */
+/*   Created: 2021/11/14 03:19:19 by admadene          #+#    #+#             */
+/*   Updated: 2021/11/14 03:19:21 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-# define HUMANB_HPP
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
 
-#include "Weapon.hpp"
-#include <string>
-#include <iostream>
-
-class	HumanB
+int main()
 {
-	public:
-		HumanB(std::string name);
-		~HumanB(void);
-		void	setWeapon(Weapon& ref);
-		void	attack(void);
-	
-	private:
-	
-		std::string	_name;
-		Weapon*		_weapon;
-
-};
+    Dog  bob;
 
 
-#endif
+    std::cout << ((Dog)*bob)->_vocer;
+
+}
