@@ -18,20 +18,28 @@ int main(int ac, char ** av)
 {
 	if (ac != 4)
 	{
-		std::cout << "Error: bad arguments\n";
-		return (1);
+		std::cout << "Error: wrong number of arguments\n";
+		return (0);
 	}
 
 	std::ifstream	ifs;
 	std::string		str;
 	std::string		line;
 	std::string		filename = av[1];
+	std::string		s1 = av[2];
+	std::string 	s2 = av[3];
+
+	if (filename.empty() || s1.empty() || s2.empty())
+	{
+		std::cout << "Error: bad arguments\n";
+		return (0);
+	}
 
 	ifs.open(filename);
 	if (!ifs.is_open())
 	{
 		std::cout << "Error: can't open " << filename << std::endl;
-		return (1);
+		return (0);
 	}
 	while (!ifs.eof())
 	{
@@ -45,8 +53,6 @@ int main(int ac, char ** av)
 	ifs.close();
 
 	std::size_t	i = 0;
-	std::string	s1 = av[2];
-	std::string s2 = av[3];
 	std::ofstream ofs;
 
 	while (i != std::string::npos)
@@ -58,7 +64,7 @@ int main(int ac, char ** av)
 			str.insert(i, s2);
 		}
 	}
-  	ofs.open (filename + ".remplace", std::ofstream::out);
+  	ofs.open (filename + ".replace", std::ofstream::out);
   	ofs << str;
   	ofs.close();
 	
