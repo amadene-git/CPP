@@ -6,7 +6,7 @@
 #    By: admadene <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/09 17:22:03 by admadene          #+#    #+#              #
-#    Updated: 2021/06/30 19:19:44 by admadene         ###   ########.fr        #
+#    Updated: 2021/11/15 14:05:04 by admadene         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ ${NAME}	:	${OBJS}
 			${CC}  ${FLAGS} -o ${NAME} ${OBJS}
 
 testclean:
-			rm -rf test*
+			@rm -rf test*
 
 test	:	re testclean
 				@echo
@@ -58,6 +58,14 @@ test	:	re testclean
 				@cat test3.replace
 #####################################################################################
 				@echo
+				@echo "abcdef" > test4
+				@echo "test4 ->"
+				@cat test4
+				./replace test4 a aaaaaaaaaaaaaaaaaaaa
+				@echo "test4.replace ->"
+				@cat test4.replace
+#####################################################################################
+				@echo
 				chmod -r test3
 				./replace test3 mdr ptdr
 				@echo
@@ -73,7 +81,7 @@ test	:	re testclean
 
 clean :
 			rm -rf ${OBJS}
-fclean :	clean 
+fclean :	clean testclean
 			rm -rf ${NAME}
 re		: fclean
 			make all

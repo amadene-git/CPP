@@ -6,7 +6,7 @@
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/01 18:11:24 by admadene          #+#    #+#             */
-/*   Updated: 2021/07/01 18:30:38 by admadene         ###   ########.fr       */
+/*   Updated: 2021/11/15 13:59:46 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,14 @@ int main(int ac, char ** av)
 
 	while (i != std::string::npos)
 	{
-		i = str.find(s1);
+		i = str.find(s1, i);
 		if (i != std::string::npos)
 		{
 			str.erase(i, s1.size());
 			str.insert(i, s2);
+			i += s2.size();
 		}
+		std::cout << i << std::endl;
 	}
   	ofs.open (filename + ".replace", std::ofstream::out);
   	ofs << str;
