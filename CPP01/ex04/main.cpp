@@ -64,7 +64,6 @@ int main(int ac, char ** av)
 			str.insert(i, s2);
 			i += s2.size();
 		}
-		std::cout << i << std::endl;
 	}
   	ofs.open (filename + ".replace", std::ofstream::out);
   	ofs << str;
