@@ -77,34 +77,24 @@ Fixed 	&Fixed::operator=(Fixed const &rhs)
 	return (*this);
 }
 
-Fixed 	&Fixed::operator+(Fixed const &rhs)
+Fixed 	Fixed::operator+(Fixed const &rhs) const
 {
-	this->_value += rhs.getRawBits();
-	return (*this);
+	return Fixed(this->toFloat() + rhs.toFloat());
 }
 
-Fixed 	&Fixed::operator-(Fixed const &rhs)
+Fixed 	Fixed::operator-(Fixed const &rhs) const
 {
-	this->_value -= rhs.getRawBits();
-	return (*this);
+	return Fixed(this->toFloat() - rhs.toFloat());
 }
 
-Fixed 	&Fixed::operator*(Fixed const &rhs)
+Fixed 	Fixed::operator*(Fixed const &rhs) const
 {
-	float a = this->toFloat();
-	float b = rhs.toFloat();
-	a *= b;
-	this->_value = roundf(a * (1 << _fix));
-	return (*this);
+	return Fixed(this->toFloat() * rhs.toFloat());
 }
 
-Fixed 	&Fixed::operator/(Fixed const &rhs)
+Fixed 	Fixed::operator/(Fixed const &rhs) const
 {
-	float a = this->toFloat();
-	float b = rhs.toFloat();
-	a /= b;
-	this->_value = roundf(a * (1 << _fix));
-	return (*this);
+	return Fixed(this->toFloat() / rhs.toFloat());
 }
 
 
@@ -150,6 +140,19 @@ Fixed	Fixed::operator++(int)
 {
    Fixed	temp = *this;
    ++*this;
+   return (temp);
+}
+
+Fixed	&Fixed::operator--()
+{
+   this->_value--;
+   return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+   Fixed	temp = *this;
+   --*this;
    return (temp);
 }
 
