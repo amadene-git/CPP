@@ -10,18 +10,18 @@
 #                                                                              #
 # **************************************************************************** #
 
+NAME	= Abstract_Animal
 
-NAME	= Animal
+SRCS	= main.cpp A_Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
-SRCS	= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
-
-HEADER	= Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
+HEADER	= A_Animal.hpp Dog.hpp Cat.hpp Brain.hpp
 
 OBJS	= ${SRCS:.cpp=.o}
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-CC		= c++
+CC		= clang++
+
 
 .cpp.o	:
 			${CC}  ${FLAGS} -I . -c $< -o ${<:.cpp=.o}

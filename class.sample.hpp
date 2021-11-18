@@ -16,5 +16,4 @@ class	__Class__
 
 std::ostream& operator<<(std::ostream &out, __Class__ const &src);
 
-
 #endif

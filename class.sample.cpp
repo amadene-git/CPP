@@ -19,12 +19,13 @@ __Class__::__Class__(__Class__ const &src)
 
 __Class__		&__Class__::operator=(__Class__ const &rhs)
 {
-	this->_private = rhs._private;
+	if (*this != rhs)
+		*this = rhs;
 	return (*this);
 }
 
 std::ostream	&operator<<(std::ostream &out, __Class__ const &src)
 {
-	out << "overload <<";
+	out << &src;
 	return (out);
 }
