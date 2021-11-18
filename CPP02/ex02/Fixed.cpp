@@ -15,31 +15,34 @@
 // CONSTRUCTOR & DESTRUCTOR
 Fixed::Fixed(void)
 {
-	std::cout << "Default constructor called" << std::endl;
+//	std::cout << "Default constructor called" << std::endl;
 	this->_value = 0;
 }
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Default destructor called" << std::endl;
+//	std::cout << "Default destructor called" << std::endl;
 }
 
 Fixed::Fixed(Fixed const &src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+//	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed::Fixed(int const i)
 {
-	std::cout << "Int constructor called" << std::endl;
+//	std::cout << "Int constructor called" << std::endl;
 	this->_value = i << _fix;
 }
 
 Fixed::Fixed(float const f)
 {
-	std::cout << "Float constructor called" << std::endl;
-	this->_value = roundf(f * (1 << _fix));// ~= f << _fix
+//	std::cout << "Float constructor called" << std::endl;
+	int exp = 1;
+	for (int i = 0; i < _fix && _fix > 0; i++)
+		exp *= 2;
+	this->_value = roundf(f * exp);// ~= f << _fix
 }
 
 
@@ -60,7 +63,10 @@ void	Fixed::setRawBits(int const raw)
 //CONVERTOR
 float	Fixed::toFloat(void) const
 {
-	return ((float)(this->_value) / (1 << _fix));// ~= value >> _fix
+	int exp = 1;
+	for (int i = 0; i < _fix && _fix > 0; i++)
+		exp *= 2;
+	return ((float)this->_value / exp);// ~= value >> _fix
 }
 
 int		Fixed::toInt(void) const
@@ -72,7 +78,7 @@ int		Fixed::toInt(void) const
 //OVERLOAD ASSIGNATION
 Fixed 	&Fixed::operator=(Fixed const &rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
+//	std::cout << "Assignation operator called" << std::endl;
 	this->_value = rhs.getRawBits();
 	return (*this);
 }

@@ -17,9 +17,10 @@
 
 int main()
 {
-    Dog  bob;
+    Animal *bob[10] = new  Dog();
 
 
-    std::cout << ((Dog)*bob)->_vocer;
+    (Dog)bob 
+    std::cout << ;
 
 }

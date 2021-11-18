@@ -14,6 +14,8 @@ NAME	= Fixed
 
 SRCS	= main.cpp Fixed.cpp
 
+HEADER = Fixed.hpp
+
 OBJS	= ${SRCS:.cpp=.o}
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
@@ -25,6 +27,8 @@ CC		= clang++
 			${CC}  ${FLAGS} -I . -c $< -o ${<:.cpp=.o}
 
 all:	${NAME}
+
+${OBJS}:	${HEADER}
 
 ${NAME}:	${OBJS}
 			${CC} ${FLAGS} -o ${NAME} ${OBJS}
