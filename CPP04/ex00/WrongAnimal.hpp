@@ -8,7 +8,8 @@ class	WrongAnimal
 		WrongAnimal(void);
 		WrongAnimal(WrongAnimal const & src);
 		~WrongAnimal(void);
-	
+		WrongAnimal	&operator=(WrongAnimal const &rhs);
+
 		std::string	getType(void) const;
 		void		setType(std::string name);
 

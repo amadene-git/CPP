@@ -29,7 +29,13 @@ void			WrongAnimal::setType(std::string name)
 
 void			WrongAnimal::makeSound(void) const
 {
-	std::cout << "WROOOOOOOOOONG !!! (oui c'est censé représenter les cris de tout les Wrong-animaux...)" << std::endl;
+	std::cout << "WROOOOOOOOOONG !!!" << std::endl;
+}
+
+WrongAnimal			&WrongAnimal::operator=(WrongAnimal const &rhs)
+{
+	this->type = rhs.getType();
+	return (*this);
 }
 
 std::ostream	&operator<<(std::ostream &out, WrongAnimal const &src)

@@ -8,6 +8,10 @@ class	__Class__
 		__Class__(void);
 		__Class__(__Class__ const & src);
 		~__Class__(void);
+		__Class__	&operator=(__Class__ const &rhs);
+
+	private:
+		int		_private;
 };
 
 std::ostream& operator<<(std::ostream &out, __Class__ const &src);

@@ -8,11 +8,12 @@ class	Brain
 		Brain(void);
 		Brain(Brain const & src);
 		~Brain(void);
+		Brain		&operator=(Brain const &rhs);
+
 
 		std::string			getTheIdea(int i) const;
 		void				setTheIdea(int i, std::string idea);
 
-	
 	private:
 		std::string	_ideas[100];
 

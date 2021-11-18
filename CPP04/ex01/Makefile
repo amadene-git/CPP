@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= Animal
+NAME	= Brain
 
 SRCS	= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 

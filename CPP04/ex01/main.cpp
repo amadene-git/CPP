@@ -10,17 +10,51 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "Brain.hpp"
 
 int main()
 {
-    Animal *bob[10] = new  Dog();
+    Animal  *array[10];
 
+    for (int i = 0; i < 5; i++)
+        array[i] = new Dog;
+    std::cout << std::endl;
+    for (int i = 5; i < 10; i++)
+        array[i] = new Cat;
+    std::cout << std::endl;
+    for (int i = 0; i < 10; i++)
+        std::cout << i << ": " << *array[i];
+    std::cout << std::endl;
+    for (int i = 0; i < 10; i++)
+        delete array[i];
+    std::cout << std::endl;
 
-    (Dog)bob 
-    std::cout << ;
+    Cat bob;
+    bob.getBrain().setTheIdea(45, "lolilol");
+    std::cout << std::endl;
 
+    Cat *felix = new Cat(bob);
+    std::cout << felix->getBrain().getTheIdea(45) << std::endl;
+    std::cout << std::endl;
+   
+    Cat chaton = *felix;
+    delete felix;
+    std::cout << chaton.getBrain().getTheIdea(45) << std::endl;
+    std::cout << std::endl;
+
+    Dog snoopy;
+    snoopy.getBrain().setTheIdea(99, "pouet pouet");
+    std::cout << std::endl;
+
+    Dog *medor = new Dog(snoopy);
+    std::cout << medor->getBrain().getTheIdea(99) << std::endl;
+    std::cout << std::endl;
+   
+    Dog toutou = *medor;
+    delete medor;
+    std::cout << toutou.getBrain().getTheIdea(99) << std::endl;
+    std::cout << std::endl;
+
+//   system("leaks Brain");
 }

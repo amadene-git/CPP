@@ -29,12 +29,18 @@ void			Animal::setType(std::string name)
 
 void			Animal::makeSound(void) const
 {
-	std::cout << "TCFJNDCIUSFCVDSBCUFGSCDSCBDSI !!! (oui c'est censé représenter les cris de tous les animaux...)" << std::endl;
+	std::cout << "Grout Grout" << std::endl;
+}
+
+Animal			&Animal::operator=(Animal const &rhs)
+{
+	this->type = rhs.getType();
+	return (*this);
 }
 
 std::ostream	&operator<<(std::ostream &out, Animal const &src)
 {
-	out << "The " << src.getType() << " says:";
+	out << &src << " -> " << src.getType() << " says:";
 	src.makeSound();
 	return (out);
 }

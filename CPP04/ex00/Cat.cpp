@@ -21,3 +21,9 @@ void	Cat::makeSound(void) const
 {
 	std::cout << "Miaou Miaou" << std::endl;
 }
+
+Cat			&Cat::operator=(Cat const &rhs)
+{
+	this->type = rhs.getType();
+	return (*this);
+}

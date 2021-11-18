@@ -29,18 +29,6 @@ int main()
     std::cout << *meta;
     std::cout << *i;
     std::cout << *j;
-
-    std::cout << "\n\navec les cast:\n" << std::endl;
-
-    std::cout << ((Animal*)j)->getType() << " " << std::endl;
-    std::cout << ((Animal*)i)->getType() << " " << std::endl;
-    ((Animal*)i)->makeSound(); //will output the cat sound!
-    ((Animal*)j)->makeSound();
-    ((Animal*)meta)->makeSound();
-    
-    std::cout << *(Animal*)meta;
-    std::cout << *(Animal*)i;
-    std::cout << *(Animal*)j;
     delete meta;
     delete j;
     delete i;

@@ -8,6 +8,8 @@ class	Animal
 		Animal(void);
 		Animal(Animal const & src);
 		virtual ~Animal(void);
+		Animal	&operator=(Animal const &rhs);
+
 	
 		std::string	getType(void) const;
 		void		setType(std::string name);
@@ -20,6 +22,5 @@ class	Animal
 };
 
 std::ostream& operator<<(std::ostream &out, Animal const &src);
-
 
 #endif

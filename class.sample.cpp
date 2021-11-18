@@ -17,6 +17,12 @@ __Class__::__Class__(__Class__ const &src)
 	*this = src;
 }
 
+__Class__		&__Class__::operator=(__Class__ const &rhs)
+{
+	this->_private = rhs._private;
+	return (*this);
+}
+
 std::ostream	&operator<<(std::ostream &out, __Class__ const &src)
 {
 	out << "overload <<";

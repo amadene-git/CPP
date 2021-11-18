@@ -22,3 +22,8 @@ void	Dog::makeSound(void) const
 	std::cout << "Wouaf Wouaf" << std::endl;
 }
 
+Dog			&Dog::operator=(Dog const &rhs)
+{
+	this->type = rhs.getType();
+	return (*this);
+}

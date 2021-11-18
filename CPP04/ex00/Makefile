@@ -20,7 +20,7 @@ OBJS	= ${SRCS:.cpp=.o}
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-CC		= clang++
+CC		= c++
 
 
 .cpp.o	:
