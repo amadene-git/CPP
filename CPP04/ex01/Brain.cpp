@@ -4,7 +4,7 @@ Brain::Brain(void)
 {
 	std::cout << "Brain Default constructor called ->" << this << std::endl;
 	for (int i = 0; i < 100; i++)
-		this->_ideas[i] = "ideas-" + std::to_string(i);
+		this->_ideas[i] = "empty";
 }
 
 Brain::~Brain(void)
