@@ -5,39 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/17 17:44:14 by admadene          #+#    #+#             */
-/*   Updated: 2021/10/18 12:43:17 by admadene         ###   ########.fr       */
+/*   Created: 2021/10/18 13:17:57 by admadene          #+#    #+#             */
+/*   Updated: 2021/10/18 14:26:44 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScravTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ClapTrap wesh("wesh");
-	wesh.attack("yo");
-	std::cout << wesh;
-	wesh.takeDamage(2);
-	std::cout << wesh;
-	wesh.beRepaired(2);
-	std::cout << wesh;
-	wesh.takeDamage(13);
-	std::cout << wesh;
-	wesh.takeDamage(45);
-	std::cout << wesh;
+	FragTrap	JeanMichel("Jean Michel");
+	JeanMichel.attack("Jean Francois");
+	JeanMichel.takeDamage(10);
+	JeanMichel.beRepaired(3);
+
+	std::cout << std::endl;
 	
-	ClapTrap yo(wesh);
-	std::cout << yo;
-	yo.beRepaired(10);
-	std::cout << yo;
-	wesh.takeDamage(4);
-	std::cout << wesh;
-	yo.takeDamage(6);
-	std::cout << yo;
+	FragTrap Sasuke("Sasuke");
+	Sasuke.highFivesGuys();
+	Sasuke = JeanMichel;
+
+	std::cout << std::endl;
+
+	ClapTrap	Naruto("Naruto");
+	Naruto.attack("Jean Francois");
+	Naruto.takeDamage(10);
+	Naruto.beRepaired(3);
+
+	std::cout << std::endl;
+
 	
-	
-	yo = wesh;
-	std::cout << wesh;
-	std::cout << yo;
+//	Naruto.guardGate();
+//	Sasuke = Naruto;
+//	std::cout << JeanMichel._name << std::endl;
+
+
 	return (0);
+
+
+
 }

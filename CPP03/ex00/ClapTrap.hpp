@@ -23,7 +23,7 @@ class	Points
 		Points			&operator=(unsigned int rhs);
 		~Points(void);
 		
-		unsigned int	getter(void);
+		unsigned int	getter(void) const;
 		
 		Points			&operator+(unsigned int rhs);
 		Points			&operator-(unsigned int rhs);
@@ -44,16 +44,21 @@ class	ClapTrap
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 
+		std::string		getName(void) const;
+		Points			getHitpoints(void) const;
+		Points			getEnergy_points(void) const;
+		unsigned int	getAttack_damage(void) const;
+
 	private:
 		ClapTrap(void);
 
-		std::string		_name;
-		Points			_hit_points;
-		Points			_energy_points;
-		unsigned int	_attack_damage;
+		std::string		Name;
+		Points			Hitpoints;
+		Points			Energy_points;
+		unsigned int	Attack_damage;
 };
 
-
-
+std::ostream	&operator<<(std::ostream &out, Points const &src);
+std::ostream	&operator<<(std::ostream &out, ClapTrap const &src);
 
 #endif
