@@ -20,7 +20,7 @@ unsigned int	Points::getter(void) const {return (this->_value);}
 
 Points 			&Points::operator=(unsigned int rhs)
 {
-	this->_value = (rhs < 0) ? 0 : rhs;
+	this->_value = rhs;
 	return (*this);
 }
 
