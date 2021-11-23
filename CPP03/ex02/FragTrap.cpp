@@ -12,64 +12,42 @@
 
 #include "FragTrap.hpp"
 
-//SCRAVTRAP CLASS
 FragTrap::FragTrap(void)
 {
 	std::cout << this << "*****FragTrap***** Default constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const & src)
+FragTrap::FragTrap(FragTrap const & src) : ClapTrap::ClapTrap(src)
 {
 	std::cout << this << "*****FragTrap***** Copy constructor called" << std::endl;
-	*this = src;
 }
 
-FragTrap::FragTrap(std::string const name)
+FragTrap::FragTrap(std::string const name) : ClapTrap::ClapTrap(name)
 {
-	this->_name = name;
-	this->_hit_points = 100;
-	this->_energy_points = 100;
-	this->_attack_damage = 30;
-	std::cout << this << "*****FragTrap***** overload constructor called for " << this->_name << std::endl;
+	this->Hitpoints = 100;
+	this->Energy_points = 100;
+	this->Attack_damage = 30;
+	std::cout << this << "*****FragTrap***** overload constructor called for " << this->Name << std::endl;
 }
 
-FragTrap	&FragTrap::operator=(FragTrap const &rhs)
-{
-	this->_name = rhs._name;
-	this->_energy_points = rhs._energy_points;
-	this->_hit_points = rhs._hit_points;
-	this->_attack_damage = rhs._attack_damage;
-	return (*this);
-}
+// FragTrap	&FragTrap::operator=(FragTrap const &rhs)
+// {
+// 	std::cout << "*****FragTrap***** Assignation overload called for " << this << std::endl;
+// 	this->Energy_points = rhs.getEnergy_points();
+// 	this->Hitpoints = rhs.getHitpoints();
+// 	this->Attack_damage = rhs.getAttack_damage();
+// 	return (*this);
+// }
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << this << "*****FragTrap***** destructor called for " << this->_name << std::endl;
+	std::cout << this << "*****FragTrap***** destructor called for " << this->Name << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << this << "*****FragTrap***** " << this->_name << " asks for a positive high fives !"<< std::endl;
+	std::cout << this << "*****FragTrap***** " << this->Name << " asks for a positive high fives !"<< std::endl;
 }
-
-/*
-void    FragTrap::attack(std::string const & target)
-{
-	std::cout << this << "*****FragTrap***** "<<this->_name<<" attack "<<target<<", causing "<<this->_attack_damage<<" points of damage!" << std::endl;
-}
-
-void    FragTrap::takeDamage(unsigned int amount)
-{
-	this->_hit_points = this->_hit_points - amount;
-	std::cout << this << "*****FragTrap****** "<<this->_name<<" takes "<<amount<<" points of damage! He has "<<this->_hit_points.getter()<<" Hitpoints left." << std::endl;
-}
-
-void    FragTrap::beRepaired(unsigned int amount)
-{
-	this->_hit_points = this->_hit_points + amount;
-	std::cout << this << "*****FragTrap****** "<<this->_name<<" has been repaired by "<<amount<<", it has "<<this->_hit_points.getter()<<" left."<< std::endl;
-}
-*/
 
 
 

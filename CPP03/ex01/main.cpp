@@ -11,27 +11,46 @@
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	ScravTrap	JeanMichel("Jean Michel");
+	ScavTrap *ptr = new ScavTrap("ptr");
+	std::cout << std::endl;
+	delete ptr;
+	std::cout << std::endl;
+
+	ScavTrap	JeanMichel("Jean Michel");
 	JeanMichel.attack("Jean Francois");
 	JeanMichel.takeDamage(10);
 	JeanMichel.beRepaired(3);
+	std::cout << JeanMichel << std::endl;
 
 	std::cout << std::endl;
 	
-	ScravTrap Sasuke("Sasuke");
+	ScavTrap Sasuke("Sasuke");
+	std::cout << Sasuke << std::endl;
 	Sasuke.guardGate();
+	std::cout << JeanMichel << std::endl;
+	std::cout << Sasuke << std::endl;
 	Sasuke = JeanMichel;
+	std::cout << JeanMichel << std::endl;
+	std::cout << Sasuke << std::endl;
 
 	std::cout << std::endl;
+	
+	ScavTrap goku(Sasuke);
+	std::cout << goku << std::endl;
+
+	
+	std::cout << std::endl;
+
 
 	ClapTrap	Naruto("Naruto");
 	Naruto.attack("Jean Francois");
 	Naruto.takeDamage(10);
 	Naruto.beRepaired(3);
+	std::cout << Naruto << std::endl;
 
 	std::cout << std::endl;
 

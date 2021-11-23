@@ -15,6 +15,7 @@
 //POINTS CLASS
 Points::Points(void){}
 Points::Points(Points const &src){*this = src;}
+Points::Points(unsigned int i){this->_value = i;}
 Points::~Points(void){}
 unsigned int	Points::getter(void) const {return (this->_value);}
 
@@ -52,13 +53,11 @@ ClapTrap::ClapTrap(ClapTrap const & src)
 {
 	std::cout << this << "*****ClapTrap***** Copy constructor called" << std::endl;
 	*this = src;
+	this->Name = src.getName();
 }
 
-ClapTrap::ClapTrap(std::string const name) : Name(name)
+ClapTrap::ClapTrap(std::string const name) : Name(name), Hitpoints(10), Energy_points(10), Attack_damage(0)
 {
-	this->Energy_points = 10;
-	this->Hitpoints = 10;
-	this->Attack_damage = 0;
 	std::cout << this << "*****ClapTrap***** overload constructor called for " << this->Name << std::endl;
 }
 
@@ -108,7 +107,6 @@ unsigned int	ClapTrap::getAttack_damage(void) const
 ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
 {
 	std::cout << "*****ClapTrap***** Assignation overload called for " << this << std::endl;
-	this->Name = rhs.getName();
 	this->Energy_points = rhs.getEnergy_points();
 	this->Hitpoints = rhs.getHitpoints();
 	this->Attack_damage = rhs.getAttack_damage();

@@ -13,7 +13,7 @@
 NAME = ClapTrap
 
 CC = c++
-CC_FLAGS =  -Wall -Wextra -Werror -std=c++98 #-Wfatal-errors -Wpedantic -Wconversion -Wshadow
+CC_FLAGS =  -Wall -Wextra -Werror -std=c++98 ##-Wfatal-errors -Wpedantic -Wconversion -Wshadow
 
 SRCS = $(wildcard *.cpp)
 

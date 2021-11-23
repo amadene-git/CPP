@@ -15,6 +15,10 @@
 int main()
 {
 	DiamondTrap Goku("Son Goku");
+	std::cout << Goku << std::endl;
+
+	Goku.takeDamage(10);
+	std::cout << Goku << std::endl;
 
 	return (0);
 

@@ -20,6 +20,7 @@ class	Points
 	public:
 		Points(void);
 		Points(Points const &src);
+		Points(unsigned int i);
 		Points			&operator=(unsigned int rhs);
 		~Points(void);
 		
@@ -31,6 +32,7 @@ class	Points
 	private:
 		unsigned int	_value;
 };
+std::ostream	&operator<<(std::ostream &out, Points const &src);
 
 class	ClapTrap
 {	
@@ -58,7 +60,6 @@ class	ClapTrap
 		unsigned int	Attack_damage;
 };
 
-std::ostream	&operator<<(std::ostream &out, Points const &src);
 std::ostream	&operator<<(std::ostream &out, ClapTrap const &src);
 
 #endif

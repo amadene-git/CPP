@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -18,22 +18,19 @@
 # include <iostream>
 # include <string>
 
-class	ScravTrap : virtual public ClapTrap
+class	ScavTrap : public ClapTrap
 {
 	protected:
-		ScravTrap(void);
+		ScavTrap(void);
 
 	public:
-		ScravTrap(std::string const name);
-		ScravTrap(ScravTrap const & src);
-		ScravTrap	&operator=(ScravTrap const &rhs);
-		~ScravTrap(void);
+		ScavTrap(std::string const name);
+		ScavTrap(ScavTrap const & src);
+		// ScavTrap	&ScavTrap::operator=(ScavTrap const &rhs);
+		~ScavTrap(void);
 
 		void	attack(std::string const & target);
-//		void	takeDamage(unsigned int amount);
-//		void	beRepaired(unsigned int amount);
 		void 	guardGate(void);
-
 };
 
 #endif

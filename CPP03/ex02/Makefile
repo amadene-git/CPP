@@ -1,4 +1,4 @@
-NAME = out
+NAME = FragTrap
 
 CC = clang++
 CC_FLAGS =  -Wall -Wextra -Werror -std=c++98 #-Wfatal-errors -Wpedantic -Wconversion -Wshadow

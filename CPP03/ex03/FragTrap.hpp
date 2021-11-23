@@ -18,18 +18,20 @@
 # include <iostream>
 # include <string>
 
-class	FragTrap : virtual public ClapTrap
+class	FragTrap : public virtual ClapTrap
 {
 	protected:
 		FragTrap(void);
-
+	
 	public:
 		FragTrap(std::string const name);
 		FragTrap(FragTrap const & src);
-		FragTrap	&operator=(FragTrap const &rhs);
+//		FragTrap	&operator=(FragTrap const & rhs);
+
 		~FragTrap(void);
 
 		void	highFivesGuys(void);
+	
 };
 
 #endif
