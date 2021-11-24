@@ -10,7 +10,7 @@ class	Cure : public AMateria
 	public:
 		Cure(void);
 		Cure(Cure const & src);
-        Cure operator=(AMateria const &rhs);
+        Cure &operator=(Cure const &rhs);
 		~Cure(void);
 
 

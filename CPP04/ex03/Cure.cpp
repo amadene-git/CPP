@@ -1,20 +1,19 @@
 #include "Cure.hpp"
 
-Cure::Cure(void) : _type("cure")
+Cure::Cure(void) : AMateria("cure")
 {
 	std::cout << "Cure Default constructor called" << std::endl;
 }
 
-Cure::Cure(Cure const &src)
+Cure::Cure(Cure const &src) : AMateria("cure")
 {
 	std::cout << "Cure Copy constructor called" << std::endl;
 	*this = src;
 }
 
-Cure	Cure::operator=(AMateria const &rhs);
+Cure	&Cure::operator=(Cure const &rhs)
 {
-	if (this != rhs)
-		*this = rhs;
+	(void)rhs;
 	return (*this);
 }
 
@@ -22,14 +21,15 @@ Cure::~Cure(void)
 {
 	std::cout << "Cure Default destructor called" << std::endl;
 }
-Cure* Cure::clone() const
+AMateria*	Cure::clone() const
 {
-	return (new Cure(*this));
+	AMateria *ptr = new Cure(*this);
+	return (ptr);
 }
 
-void Cure::use(ICharacter& target)
+void		Cure::use(ICharacter& target)
 {
-	std::cout << '* beals ' << target.getName() << "'s wounds *"std::endl;
+	std::cout << "* beals " << target.getName() << "'s wounds *" << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &out, Cure const &src)

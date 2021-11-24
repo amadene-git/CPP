@@ -26,8 +26,10 @@ int main()
     for (int i = 0; i < 10; i++)
         std::cout << i << ": " << *array[i];
     std::cout << std::endl;
+    
+    Animal **ptr = &array[0];
     for (int i = 0; i < 10; i++)
-        delete array[i];
+        delete ptr[i];
     std::cout << std::endl;
 
     Cat bob;
@@ -52,8 +54,10 @@ int main()
     std::cout << std::endl;
    
     Dog toutou = *medor;
+    Dog *scooby  = new Dog(*medor);
     delete medor;
     std::cout << toutou.getBrain().getTheIdea(99) << std::endl;
+    std::cout << scooby->getBrain().getTheIdea(99) << std::endl;
     std::cout << std::endl;
 
 //   system("leaks Brain");

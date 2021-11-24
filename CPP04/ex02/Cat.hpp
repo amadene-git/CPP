@@ -2,10 +2,10 @@
 # define CAT_HPP
 
 # include <iostream>
-# include "A_Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class	Cat : public A_Animal
+class	Cat : public AAnimal
 {
 	public:
 		Cat(void);

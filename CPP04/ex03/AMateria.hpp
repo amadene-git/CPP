@@ -1,20 +1,24 @@
 #ifndef AMATERIA_HPP
-# define AMATEIRA_HPP
+# define AMATERIA_HPP
 
 # include <iostream>
 # include <string>
-# include "ICharacter.hpp" 
+
+class AMateria;
+
+# include "ICharacter.hpp"
 
 class	AMateria
 {
 	protected:
 		std::string _type;
-	
+
 	public:
 		AMateria(void);
 		AMateria(AMateria const & src);
 		AMateria(std::string const & type);
-		~AMateria(void);
+		AMateria	&operator=(AMateria const &rhs);
+		virtual ~AMateria(void);
 
 		std::string const & getType() const;
 		virtual AMateria* clone() const = 0;

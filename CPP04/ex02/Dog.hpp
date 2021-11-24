@@ -2,10 +2,10 @@
 # define DOG_HPP
 
 # include <iostream>
-# include "A_Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class	Dog : public A_Animal
+class	Dog : public AAnimal
 {
 	public:
 		Dog(void);
