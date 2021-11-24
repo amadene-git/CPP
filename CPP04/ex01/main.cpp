@@ -6,7 +6,7 @@
 /*   By: admadene <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 03:19:19 by admadene          #+#    #+#             */
-/*   Updated: 2021/11/14 03:19:21 by admadene         ###   ########.fr       */
+/*   Updated: 2021/11/24 05:14:56 by admadene         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,6 @@ int main()
     std::cout << toutou.getBrain().getTheIdea(99) << std::endl;
     std::cout << scooby->getBrain().getTheIdea(99) << std::endl;
     std::cout << std::endl;
-
+	delete scooby;
 //   system("leaks Brain");
 }

@@ -10,7 +10,7 @@ int main()
     AMateria    *ice2 = new Ice();
     Character   bob("Bob");
     Character   dylan("Dylan");
-
+    
     bob.equip(cure1);
     bob.equip(cure2);
     bob.equip(ice1);

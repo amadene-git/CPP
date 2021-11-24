@@ -9,7 +9,7 @@ class	WrongCat : public WrongAnimal
 	public:
 		WrongCat(void);
 		WrongCat(WrongCat const & src);
-		~WrongCat(void);
+		virtual ~WrongCat(void);
 		WrongCat	&operator=(WrongCat const &rhs);
 	
 		void		makeSound(void) const;
