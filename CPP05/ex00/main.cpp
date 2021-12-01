@@ -2,7 +2,9 @@
 
 int main()
 {    
-    try
+   
+	std::cout << "test 1:\n";
+	try
 	{
         Bureaucrat bob;
         Bureaucrat boby("boby");
@@ -15,6 +17,7 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
     
+	std::cout << "test 2:\n";
     try
     {
         Bureaucrat bob("bob", 151);
@@ -23,6 +26,8 @@ int main()
     {
 		std::cout << e.what() << std::endl;
     }
+	
+	std::cout << "test 3:\n";
     try
     {
         Bureaucrat bob("bob", 0);
@@ -31,6 +36,8 @@ int main()
     {
 		std::cout << e.what() << std::endl;
     }
+	
+	std::cout << "test 4:\n";
     try
     {
         Bureaucrat bob("bob", 150);
@@ -40,6 +47,8 @@ int main()
     {
 		std::cout << e.what() << std::endl;
     }
+	
+	std::cout << "test 5:\n";
     try
     {
         Bureaucrat bob("bob", 1);

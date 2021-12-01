@@ -3,7 +3,7 @@ NAME = Bureaucrat
 CC = clang++
 CC_FLAGS =  -Wall -Wextra -Werror -std=c++98 #-Wfatal-errors -Wpedantic -Wconversion -Wshadow
 
-SRCS = $(wildcard *.cpp)
+SRCS = Bureaucrat.cpp Form.cpp   main.cpp
 
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 OBJS_DIR = ./objs

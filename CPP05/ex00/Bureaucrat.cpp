@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &src)
 Bureaucrat		&Bureaucrat::operator=(Bureaucrat const &rhs)
 {
 	
-	this->_grade = rhs.getGrade;
+	this->_grade = rhs.getGrade();
     catchGradeException();
 	return (*this);
 }

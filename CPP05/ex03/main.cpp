@@ -2,155 +2,38 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 int main()
 {    
+	Intern jeannot;
 
-//President
-    try
-	{
-        PresidentialPardonForm        B("pouet");
-        Bureaucrat  bob("bob", 41);
-        std::cout << std::endl;
-        std::cout << B << std::endl << bob << std::endl;
-        std::cout << std::endl;
-        bob.signForm(B);
-        std::cout << std::endl;
-    }
-	catch (std::exception & e)
-    {
-	
-        std::cout << std::endl;
-    	std::cout << e.what() << std::endl;
-        std::cout << std::endl;
-	}
-    std::cout << "------------------------------------------------------------------------------------------------------" << std::endl;
-    try
-	{
-        PresidentialPardonForm        B("pouet");
-        Bureaucrat  bob("bob", 5);
-        std::cout << std::endl;
-        std::cout << B << std::endl << bob << std::endl;
-        std::cout << std::endl;
-        bob.signForm(B);
-        B.execute(bob);
-        bob.executeForm(B);
-        std::cout << std::endl;
-    }
-	catch (std::exception & e)
-    {
-	
-        std::cout << std::endl;
-    	std::cout << e.what() << std::endl;
-        std::cout << std::endl;
-	}
-    std::cout << "------------------------------------------------------------------------------------------------------" << std::endl;
+    Form *A = jeannot.makeForm("president pardon", "bulle");
+    Form *B = jeannot.makeForm("robotomy request", "belle");
+    Form *C = jeannot.makeForm("shrubbery creation", "rebelle");
+    Form *null = jeannot.makeForm("lolilol", "mdr");
 
+	std::cout << null << std::endl;
+    Bureaucrat God("God", 1);
 
- //Robotomy 
-    try
-	{
-        RobotomyRequestForm        B("pouet");
-        Bureaucrat  bob("bob", 150);
-        std::cout << std::endl;
-        std::cout << B << std::endl << bob << std::endl;
-        std::cout << std::endl;
-        bob.signForm(B);
-        B.execute(bob);
-        std::cout << std::endl;
-    }
-	catch (std::exception & e)
-    {
-	
-        std::cout << std::endl;
-    	std::cout << e.what() << std::endl;
-        std::cout << std::endl;
-	}
-    std::cout << "------------------------------------------------------------------------------------------------------" << std::endl;
-    try
-	{
-        RobotomyRequestForm        B("pouet");
-        Bureaucrat  bob("bob", 45);
-        std::cout << std::endl;
-        std::cout << B << std::endl << bob << std::endl;
-        std::cout << std::endl;
-        bob.signForm(B);
-        B.execute(bob);
-        bob.executeForm(B);
+    std::cout << 1 << std::endl;
+    God.executeForm(*A);
+    std::cout << 1 << std::endl;
+    God.executeForm(*B);
+    std::cout << 1 << std::endl;
+	God.executeForm(*C);
+	std::cout << 1 << std::endl;
 
-        std::cout << std::endl;
-    }
-	catch (std::exception & e)
-    {
-	
-        std::cout << std::endl;
-    	std::cout << e.what() << std::endl;
-        std::cout << std::endl;
-	}
-    std::cout << "------------------------------------------------------------------------------------------------------" << std::endl;
-    try
-	{
-        RobotomyRequestForm        B("pouet");
-        Bureaucrat  bob("bob", 0);
-        std::cout << std::endl;
-        std::cout << B << std::endl << bob << std::endl;
-        std::cout << std::endl;
-        bob.signForm(B);
-        B.execute(bob);
-        bob.executeForm(B);
+	God.signForm(*A);
+	God.signForm(*B);
+	God.signForm(*C);
 
-        std::cout << std::endl;
-    }
-	catch (std::exception & e)
-    {
-	
-        std::cout << std::endl;
-    	std::cout << e.what() << std::endl;
-        std::cout << std::endl;
-	}
-    std::cout << "------------------------------------------------------------------------------------------------------" << std::endl;
-   
-//Shrubbery
-    try
-	{
-        ShrubberyCreationForm        B("pouet");
-        Bureaucrat  bob("bob", 150);
-        std::cout << std::endl;
-        std::cout << B << std::endl << bob << std::endl;
-        std::cout << std::endl;
-        bob.signForm(B);
-        B.execute(bob);
-        std::cout << std::endl;
-    }
-	catch (std::exception & e)
-    {
-	
-        std::cout << std::endl;
-    	std::cout << e.what() << std::endl;
-        std::cout << std::endl;
-	}
-    std::cout << "------------------------------------------------------------------------------------------------------" << std::endl;
-    try
-	{
-        ShrubberyCreationForm        B("pouet");
-        Bureaucrat  bob("bob", 137);
-        std::cout << std::endl;
-        std::cout << B << std::endl << bob << std::endl;
-        std::cout << std::endl;
-        bob.signForm(B);
-        B.execute(bob);
-        bob.executeForm(B);
-        std::cout << std::endl;
-    }
-	catch (std::exception & e)
-    {
-	
-        std::cout << std::endl;
-    	std::cout << e.what() << std::endl;
-        std::cout << std::endl;
-	}
-    std::cout << "------------------------------------------------------------------------------------------------------" << std::endl;
-
-
-
-    return (0);
+    std::cout << 1 << std::endl;
+    God.executeForm(*A);
+    std::cout << 1 << std::endl;
+    God.executeForm(*B);
+    std::cout << 1 << std::endl;
+	God.executeForm(*C);
+	std::cout << 1 << std::endl;
+    
+	return (0);
 }
